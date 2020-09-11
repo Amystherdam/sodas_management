@@ -4,7 +4,7 @@ class SodasController < ApplicationController
   # GET /sodas
   # GET /sodas.json
   def index
-    @sodas = Soda.all
+    @sodas = Soda.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /sodas/1
