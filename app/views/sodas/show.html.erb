@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @soda.brand %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @soda.category %>
+</p>
+
+<p>
+  <strong>Flavor:</strong>
+  <%= @soda.flavor %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @soda.capacity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @soda.price %>
+</p>
+
+<p>
+  <strong>Quantiti:</strong>
+  <%= @soda.quantiti %>
+</p>
+
+<%= link_to 'Edit', edit_soda_path(@soda) %> |
+<%= link_to 'Back', sodas_path %>

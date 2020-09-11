@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  host: localhost
+  username: root
+  password: ""
+
+development:
+  <<: *default
+  database: sodas_development
+
+test:
+  <<: *default
+  database: sodas_test
+
+production:
+  <<: *default
+  database: sodas_production
+  username: root
+  password: ""
