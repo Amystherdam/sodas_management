@@ -4,7 +4,11 @@ class SodasController < ApplicationController
   # GET /sodas
   # GET /sodas.json
   def index
-    @sodas = Soda.paginate(page: params[:page], per_page: 10)
+    if params[:search]
+      @sodas = Soda.search(params[:search]).paginate(page: params[:page], per_page: 10)
+    else
+      @sodas = Soda.paginate(page: params[:page], per_page: 10)
+    end
   end
 
   # GET /sodas/1

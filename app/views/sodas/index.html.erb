@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag( '/sodas' , method: :get) do %>
+  <%= text_field_tag 'search', nil, placeholder: 'Enter search term...' %>
+  <%= submit_tag 'Search' %>
+<% end %>
 <h1>Sodas</h1>
 
 <table>
