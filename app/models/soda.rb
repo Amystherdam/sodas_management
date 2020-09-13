@@ -5,7 +5,7 @@ class Soda < ApplicationRecord
   validates_numericality_of :capacity, :price, :quantiti
   validate :capacity_values
   validate :category_values
-  validates :brand, uniqueness: {message: " - There is already a capacity linked to this brand registered in the system", if: :capacity?, scope: :capacity}
+  validates :brand, uniqueness: {message: " - There is already the same capacity and flavor linked to this brand in the system!", if: [:capacity?, :flavor?], scope: [:capacity, :flavor]}
 
   def self.search(query)
     where(

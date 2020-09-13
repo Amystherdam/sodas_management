@@ -11,6 +11,14 @@ class SodasController < ApplicationController
     end
   end
 
+  def destroy_multiple
+    Soda.destroy(params[:soda_ids])
+    respond_to do |format|
+      format.html { redirect_to sodas_path }
+      format.json { head :no_content }
+    end
+  end
+
   # GET /sodas/1
   # GET /sodas/1.json
   def show

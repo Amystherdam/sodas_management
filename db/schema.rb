@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_09_12_021859) do
     t.integer "quantiti"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand", "capacity"], name: "index_sodas_on_brand_and_capacity", unique: true
+    t.index ["brand", "capacity", "flavor"], name: "index_sodas_on_brand_and_capacity_and_flavor", unique: true
   end
 
 end

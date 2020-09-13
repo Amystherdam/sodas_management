@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+#jQuery! For Rails! So great.
+gem 'jquery-rails'
+#Implements the 'select all' functionality in a simpler and more effective way
+gem  'select_all-rails'
 # Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -13,4 +13,14 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require jquery_ujs
+//= require select_all.js
 //= require_tree .
+
+$(function(){
+  $("#selectAll").select_all({
+    show_count: "checked_with_total",
+    attach_count_to: "#showLangCount"
+  });
+});
