@@ -1,47 +1,89 @@
-<%= form_with(model: soda, local: true) do |form| %>
-  <% if soda.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(soda.errors.count, "error") %> prohibited this soda from being saved:</h2>
+<div class="card-body justify-content-center">
+  <%= form_with(model: soda, local: true, id: "ava") do |form| %>
+    <% if soda.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(soda.errors.count, "error") %> prohibited this soda from being saved:</h2>
 
-      <ul>
-      <% soda.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% soda.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">                
+          <%= form.label :brand, class: "bmd-label-floating" %>
+          <%= form.text_field :brand, onkeyup: "modify_up(this)",
+            pattern: "^[A-Z][A-Z- ÇÃẼÂÊÎÔÛÁÉÍÓÚ.]{2,150}$", 
+            title: "Escreva o sabor em caixa alta sem espeços no começo ou final!", 
+            required: true, 
+            class: 'form-control' %>
+        </div>
+      </div>
+
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= form.label :category, class: 'bmd-label-floating' %>
+          <div class="arrowSelect">
+            <select name="soda[category]" id="soda_category" class="form-control">
+              <option>GARRAFA</option>
+              <option>PET</option>
+              <option>LATA</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">                
+          <%= form.label :flavor, class: "bmd-label-floating" %>
+          <%= form.text_field :flavor, onkeyup: "modify_up(this)",
+            pattern: "^[A-Z][A-Z- ÇÃẼÂÊÎÔÛÁÉÍÓÚ.]{2,150}$", 
+            title: "Escreva o sabor em caixa alta sem espeços no começo ou final!", 
+            required: true, 
+            class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :capacity, class: 'bmd-label-floating' %>
+        
+          <div class="arrowSelect">
+            <select name="soda[capacity]" id="soda_cacapacity" class="form-control">
+              <option value=250>250ml</option>
+              <option value=600>600ml</option>
+              <option value=1000>1L</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">                
+          <%= form.label :price, class: "bmd-label-floating" %>
+          <%= form.text_field :price,value: (number_with_precision(form.object.price, precision: 2)), required: true, class: 'form-control money'  %>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">                
+          <%= form.label :quantiti, class: "bmd-label-floating" %>
+          <%= form.number_field :quantiti, required: true, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit class: "btn btn-primary pull-right"%>
+      <%= link_to t(:back), sodas_path, class: 'btn btn-primary' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
-  </div>
-
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :flavor %>
-    <%= form.text_field :flavor %>
-  </div>
-
-  <div class="field">
-    <%= form.label :capacity %>
-    <%= form.number_field :capacity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantiti %>
-    <%= form.number_field :quantiti %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

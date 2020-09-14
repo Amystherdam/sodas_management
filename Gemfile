@@ -3,9 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
-#jQuery! For Rails! So great.
+# Bootstrap for rails
+gem 'bootstrap'
+# jQuery! For Rails! So great.
 gem 'jquery-rails'
-#Implements the 'select all' functionality in a simpler and more effective way
+# jQuery Mask
+gem 'jquery_mask_rails', '~> 0.1.0'
+# Implements the 'select all' functionality in a simpler and more effective way
 gem  'select_all-rails'
 # Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
@@ -25,7 +29,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

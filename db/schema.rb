@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_12_021859) do
+ActiveRecord::Schema.define(version: 2020_09_13_235406) do
 
   create_table "sodas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brand"
     t.string "category"
     t.string "flavor"
     t.integer "capacity"
-    t.float "price"
+    t.decimal "price", precision: 6, scale: 2
     t.integer "quantiti"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

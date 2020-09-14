@@ -1,5 +1,11 @@
-<h1>New Soda</h1>
-
-<%= render 'form', soda: @soda %>
-
-<%= link_to 'Back', sodas_path %>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+            <h4 class="card-title"><%= t(:new_client) %></h4>
+            <p class="card-category"><%= t :form_client_subtitle %></p>
+            </div>
+            <%= render 'form', soda: @soda %>
+        </div>
+    </div>
+</div>
