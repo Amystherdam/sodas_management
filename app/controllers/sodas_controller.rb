@@ -12,10 +12,16 @@ class SodasController < ApplicationController
   end
 
   def destroy_multiple
-    Soda.destroy(params[:soda_ids])
-    respond_to do |format|
-      format.html { redirect_to sodas_path }
-      format.json { head :no_content }
+    if params.has_key?(:soda_ids)
+      Soda.destroy(params[:soda_ids])
+
+      respond_to do |format|
+          format.html { redirect_to sodas_path, notice: 'No sodas found.' }
+          format.json { head :no_content }
+      end
+      
+    else
+      redirect_to sodas_path
     end
   end
 
