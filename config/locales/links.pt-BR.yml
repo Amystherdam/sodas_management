@@ -12,6 +12,10 @@ pt-BR:
   confirm_update_user: Usuário atualizado com sucesso!
   confirm_destroy_user: Usuário excluído com êxito.
 
+  confirm_create_soda: Refrigerante criado com sucesso!
+  confirm_update_soda: Refrigerante atualizado com sucesso!
+  confirm_destroy_soda: Refrigerante excluído com êxito.
+
   edit_regist_user: Editar usuário
   login: Entrar
   logout: Sair

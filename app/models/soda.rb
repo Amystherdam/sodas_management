@@ -1,7 +1,5 @@
 class Soda < ApplicationRecord
 
-  devise :database_authenticatable, :registerable, :confirmable, :recoverable, stretches: 13
-
   validates_presence_of :brand, :category, :flavor, :capacity, :price, :quantiti
   validates_length_of :brand, maximum: 30, too_long: " - Enter a maximum of 30 characters."
   validates_numericality_of :capacity, :price, :quantiti

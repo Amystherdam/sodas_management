@@ -11,10 +11,6 @@ class SodasController < ApplicationController
     else
       @sodas = Soda.paginate(page: params[:page], per_page: 10).order('created_at DESC')
     end
-
-    @priceSodas = @sodas.each do |prices|
-
-    end
   end
 
   def destroy_multiple
@@ -53,7 +49,7 @@ class SodasController < ApplicationController
 
     respond_to do |format|
       if @soda.save
-        format.html { redirect_to @soda, notice: 'Soda was successfully created.' }
+        format.html { redirect_to @soda, notice: t(:confirm_create_soda) }
         format.json { render :show, status: :created, location: @soda }
       else
         format.html { render :new }
@@ -67,7 +63,7 @@ class SodasController < ApplicationController
   def update
     respond_to do |format|
       if @soda.update(soda_params)
-        format.html { redirect_to @soda, notice: 'Soda was successfully updated.' }
+        format.html { redirect_to @soda, notice: t(:confirm_update_soda) }
         format.json { render :show, status: :ok, location: @soda }
       else
         format.html { render :edit }
@@ -81,7 +77,7 @@ class SodasController < ApplicationController
   def destroy
     @soda.destroy
     respond_to do |format|
-      format.html { redirect_to sodas_url, notice: 'Soda was successfully destroyed.' }
+      format.html { redirect_to sodas_url, notice: t(:confirm_destroy_soda) }
       format.json { head :no_content }
     end
   end

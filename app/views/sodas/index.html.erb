@@ -24,7 +24,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">          
-          <%= form_tag destroy_multiple_sodas_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <%= form_tag destroy_multiple_sodas_path, method: :delete, data: { confirm: t(:confirm) } do %>
             <%= button_tag type: "submit", class: "btn", id: "btnDeleteAll" do %>
               <i class="material-icons">delete</i>
             <% end %>
@@ -63,7 +63,7 @@
                       <% end %>
                     </td>
                     <td>
-                      <%= link_to soda, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <%= link_to soda, method: :delete, data: { confirm: t(:confirm) } do %>
                         <i class="material-icons">delete_sweep</i>
                       <% end %>  
                     </td>

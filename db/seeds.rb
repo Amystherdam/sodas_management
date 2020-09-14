@@ -26,7 +26,7 @@ Soda.create!([
     {brand: 'SCHWEPPES',    category: 'LATA',    flavor: 'CITRUS',            capacity: 250,  price: 4.00, quantiti: 10},
     {brand: 'SÃO GERALDO',  category: 'PET',     flavor: 'CAJUINA',           capacity: 600,  price: 5.50, quantiti: 10},
     {brand: 'SÃO GERALDO',  category: 'GARRAFA', flavor: 'CAJUINA E LIMÃO',   capacity: 1000, price: 7.30, quantiti: 25},
-    {brand: 'SÃO GERALDO',  category: 'GARRAFA', flavor: 'CAJUINA ARTESANAL', capacity: 1000, price: 7.20, quantiti: 50},
+    {brand: 'SÃO GERALDO',  category: 'GARRAFA', flavor: 'CAJUINA ARTESANAL', capacity: 1000, price: 7.20, quantiti: 50}
     
 ])
     puts "cadastrados!"

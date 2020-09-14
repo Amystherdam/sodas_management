@@ -18,7 +18,7 @@
           <%= form.label :brand, class: "bmd-label-floating" %>
           <%= form.text_field :brand, onkeyup: "modify_up(this)",
             pattern: "^[A-Z][A-Z- ÇÃẼÂÊÎÔÛÁÉÍÓÚ.]{2,150}$", 
-            title: "Escreva o sabor em caixa alta sem espeços no começo ou final!", 
+            title: "Escreva a marca em caixa alta sem espeços no começo ou final!", 
             required: true, 
             class: 'form-control' %>
         </div>
@@ -44,7 +44,7 @@
           <%= form.label :flavor, class: "bmd-label-floating" %>
           <%= form.text_field :flavor, onkeyup: "modify_up(this)",
             pattern: "^[A-Z][A-Z- ÇÃẼÂÊÎÔÛÁÉÍÓÚ.]{2,150}$", 
-            title: "Escreva o sabor em caixa alta sem espeços no começo ou final!", 
+            title: "Escreva o sabor em caixa alta sem espeços sem números ou menos de 2 letras!", 
             required: true, 
             class: 'form-control' %>
         </div>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="form-group">
-      <%= form.submit class: "btn btn-primary pull-right"%>
+      <%= form.submit t(:new_soda), class: "btn btn-primary pull-right"%>
       <%= link_to t(:back), sodas_path, class: 'btn btn-primary' %>
     </div>
   <% end %>
