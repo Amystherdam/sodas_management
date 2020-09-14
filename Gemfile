@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# Heroku
+gem 'rails_12factor', group: :production
+# PostgreSQL
+gem 'pg', group: :production
 # Bootstrap for rails
 gem 'bootstrap'
 # jQuery! For Rails! So great.
@@ -16,7 +20,7 @@ gem 'will_paginate', '~> 3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 # Use MySQL as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', group: :development
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
 # Use Puma as the app server
