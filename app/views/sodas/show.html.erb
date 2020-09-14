@@ -2,12 +2,12 @@
 <div class="row justify-content-center">
   <div class="col-md-8">
     <div class='margin_elements_above_table_show'>
-      <%= link_to t(:new_client), new_soda_path, class: 'btn btn-primary pull-right' %>  
+      <%= link_to t(:new_soda), new_soda_path, class: 'btn btn-primary pull-right' %>  
     </div>
     <div class="card">
         <div class="card-header card-header-primary">
-        <h4 class="card-title">Cliente <!--<%= t(:client) %>--></h4>
-        <p class="card-category">Veja os dados desse cliente abaixo <!--<%= t :form_client_subtitle %>--></p>
+        <h4 class="card-title"><%= t(:title) %></h4>
+        <p class="card-category"><%= t :show_soda_subtitle %></p>
     </div>
 
     <div class="card-body justify-content-center">
@@ -15,14 +15,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group"> 
-            <label class="bmd-label-floating"> brand</label>
+            <label class="bmd-label-floating"> <%=  @translates.human_attribute_name(:brand) %></label>
             <input type='text' value='<%=  @soda.brand %>' class="form-control"  disabled>
           </div>
         </div>                                        
 
         <div class="col-md-6">
           <div class="form-group"> 
-            <label class="bmd-label-floating">Category</label>
+            <label class="bmd-label-floating"><%=  @translates.human_attribute_name(:category) %></label>
             <input type='text' value='<%=  @soda.category %>' class="form-control"  disabled>
           </div>
         </div>                                        
@@ -31,14 +31,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label class="bmd-label-floating">flavor</label>
+            <label class="bmd-label-floating"><%=  @translates.human_attribute_name(:flavor) %></label>
             <input type='text' value='<%=  @soda.flavor %>' class="form-control"  disabled>
           </div>
         </div>                                        
 
         <div class="col-md-6">
           <div class="form-group">
-            <label class="bmd-label-floating">Capacity</label>
+            <label class="bmd-label-floating"><%=  @translates.human_attribute_name(:capacity) %></label>
             <input type='text' value='<%= format_capacity(@soda.capacity) %>' class="form-control"  disabled>
           </div>
         </div>                                        
@@ -47,14 +47,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label class="bmd-label-floating">Price R$</label>
+            <label class="bmd-label-floating"><%=  @translates.human_attribute_name(:price) %> R$</label>
             <input type='text' value='R$ <%=  number_with_precision @soda.price, precision: 2 %>' class="form-control"  disabled>
           </div>
         </div>   
 
         <div class="col-md-6">
           <div class="form-group">
-            <label class="bmd-label-floating">Quantiti</label>
+            <label class="bmd-label-floating"><%=  @translates.human_attribute_name(:quantiti) %></label>
             <input type='text' value='<%=  @soda.quantiti %>' class="form-control"  disabled>
           </div>
         </div>                                        

@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 1.times do |i|
-    puts "cadastrando..."
+    puts "cadastrando sodas..."
 Soda.create!([
     {brand: 'FANTA',        category: 'PET',     flavor: 'LARANJA',           capacity: 600,  price: 4.55, quantiti: 10},
     {brand: 'FANTA',        category: 'LATA',    flavor: 'UVA',               capacity: 250,  price: 2.80, quantiti: 25},
@@ -28,6 +28,14 @@ Soda.create!([
     {brand: 'SÃO GERALDO',  category: 'GARRAFA', flavor: 'CAJUINA E LIMÃO',   capacity: 1000, price: 7.30, quantiti: 25},
     {brand: 'SÃO GERALDO',  category: 'GARRAFA', flavor: 'CAJUINA ARTESANAL', capacity: 1000, price: 7.20, quantiti: 50},
     
+])
+    puts "cadastrados!"
+end
+
+1.times do |i|
+    puts "cadastrando usuários..."
+User.create!([
+    {email: 'refri@unilab.com.br', password: 'naUniLab'}
 ])
     puts "cadastrados!"
 end

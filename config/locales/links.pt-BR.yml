@@ -1,0 +1,36 @@
+pt-BR:
+  show: "Mostrar"
+  edit: "Editar"
+  destroy: "Deletar"
+  new: "Novo"
+  back: "Voltar"
+  new_soda: "Novo Refrigerante"
+  edit_soda: "Editar Refrigerante"
+
+  confirm: Você tem certeza?
+  confirm_create_user: Usuário criado com sucesso!
+  confirm_update_user: Usuário atualizado com sucesso!
+  confirm_destroy_user: Usuário excluído com êxito.
+
+  edit_regist_user: Editar usuário
+  login: Entrar
+  logout: Sair
+  sign_up: Registrar-se
+  forgot_your_password: Esqueceu a senha?
+  note_error_caracters_quantity: Coloque no mínimo 30 caracteres ou deixe o campo em branco.
+  submit: Enviar
+  title: Refrigerantes
+  welcome: Bem-vindo(a)
+  table_title: Refrigerantes em estoque
+  table_subtitle: Veja aqui os refrigerantes cadastrados e seus detalhes!
+  form_soda_subtitle: Insira os dados desse refrigerante!
+  show_soda_subtitle: Veja os dados desse refrigerante!
+  form_soda_edit_subtitle: Edite os dados desse refrigerante!
+  update_soda: Atualizar refrigerante
+
+  pleaceholder_search_refri: Marca, litragem, valor ou quantidade
+  
+
+  made_with: Feito com
+  by: por
+  suport: suporte

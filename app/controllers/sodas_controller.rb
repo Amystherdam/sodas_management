@@ -1,6 +1,8 @@
 class SodasController < ApplicationController
   before_action :set_soda, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!
+
   # GET /sodas
   # GET /sodas.json
   def index
@@ -32,6 +34,7 @@ class SodasController < ApplicationController
   # GET /sodas/1
   # GET /sodas/1.json
   def show
+    @translates = Soda.all
   end
 
   # GET /sodas/new

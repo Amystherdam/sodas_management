@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    models:
+      soda:
+        one: Soda
+        other: Sodas
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      soda:
+        brand: "Marca"
+        category: "Tipo"
+        flavor: "Sabor"
+        capacity: "Litragem"
+        price: "Preço"
+        quantiti: "Quantidade"
+        created_at: "Criado em"
+        updated_at: Atualizado em
+      user:
+        email: "E-mail"
+        reset_password_sent_at: "Ultima troca de senha"
+        remember_created_at: "Lembre-se de mim"
+        created_at: "Criado em"
+        updated_at: Atualizado em
