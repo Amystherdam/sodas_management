@@ -49,12 +49,24 @@
                     <td><%= soda.brand %></td>
                     <td><%= soda.category %></td>
                     <td><%= soda.flavor %></td>
-                    <td><%= soda.capacity %></td>
-                    <td><%= soda.price %></td>
+                    <td><%= format_capacity(soda.capacity) %></td>
+                    <td><%= format_price(number_with_precision soda.price, precision: 2) %></td>
                     <td><%= soda.quantiti %></td>
-                    <td><%= link_to 'Show', soda %></td>
-                    <td><%= link_to 'Edit', edit_soda_path(soda) %></td>
-                    <td><%= link_to 'Destroy', soda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td>
+                      <%= link_to soda do%>
+                       <i class="material-icons">visibility</i>
+                      <% end %>
+                    </td>
+                    <td>
+                      <%= link_to edit_soda_path(soda) do %>
+                        <i class="material-icons">edit</i>
+                      <% end %>
+                    </td>
+                    <td>
+                      <%= link_to soda, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="material-icons">delete_sweep</i>
+                      <% end %>  
+                    </td>
                   </tr>
                 <% end %>
               </tbody>

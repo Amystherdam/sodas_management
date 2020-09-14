@@ -1,5 +1,5 @@
 <div class="card-body justify-content-center">
-  <%= form_with(model: soda, local: true, id: "ava") do |form| %>
+  <%= form_with(model: soda, local: true) do |form| %>
     <% if soda.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(soda.errors.count, "error") %> prohibited this soda from being saved:</h2>

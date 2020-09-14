@@ -5,9 +5,13 @@ class SodasController < ApplicationController
   # GET /sodas.json
   def index
     if params[:search]
-      @sodas = Soda.search(params[:search]).paginate(page: params[:page], per_page: 10)
+      @sodas = Soda.search(params[:search]).paginate(page: params[:page], per_page: 10).order('created_at DESC')
     else
-      @sodas = Soda.paginate(page: params[:page], per_page: 10)
+      @sodas = Soda.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    end
+
+    @priceSodas = @sodas.each do |prices|
+
     end
   end
 

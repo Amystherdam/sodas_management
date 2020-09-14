@@ -19757,7 +19757,11 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .margin_elements_above_table {
-  margin-bottom: 50px;
+  margin-bottom: 4%;
+}
+
+.margin_elements_above_table_show {
+  margin-bottom: 9%;
 }
 
 .border_style {

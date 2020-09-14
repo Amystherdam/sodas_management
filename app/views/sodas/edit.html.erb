@@ -1,6 +1,103 @@
-<h1>Editing Soda</h1>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title"><%= t(:edit_soda) %></h4>
+        <p class="card-category"><%= t :form_client_edit_subtitle %></p>
+      </div>
+      <div class="card-body justify-content-center">
+        <%= form_with(model: @soda, local: true) do |form| %>
+          <% if @soda.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@soda.errors.count, "error") %> prohibited this soda from being saved:</h2>
 
-<%= render 'form', soda: @soda %>
+              <ul>
+              <% @soda.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-<%= link_to 'Show', @soda %> |
-<%= link_to 'Back', sodas_path %>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">                
+                <%= form.label :brand, class: "bmd-label-floating" %>
+                <%= form.text_field :brand, value: @soda.brand, onkeyup: "modify_up(this)",
+                  pattern: "^[A-Z][A-Z- ÇÃẼÂÊÎÔÛÁÉÍÓÚ.]{2,150}$", 
+                  title: "Escreva o sabor em caixa alta sem espeços no começo ou final!", 
+                  required: true, 
+                  class: 'form-control' %>
+              </div>
+            </div>
+
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <%= form.label :category, class: 'bmd-label-floating' %>
+                <div class="arrowSelect">
+                  <select name="soda[category]" id="soda_category" class="form-control" data-size="2">
+                    <option><%= @soda.category %></option>
+                    <option disabled>---------------</option>
+                    <option>GARRAFA</option>
+                    <option>PET</option>
+                    <option>LATA</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">                
+                <%= form.label :flavor, class: "bmd-label-floating" %>
+                <%= form.text_field :flavor, value: @soda.flavor, onkeyup: "modify_up(this)",
+                  pattern: "^[A-Z][A-Z- ÇÃẼÂÊÎÔÛÁÉÍÓÚ.]{2,150}$", 
+                  title: "Escreva o sabor em caixa alta sem espeços no começo ou final!", 
+                  required: true, 
+                  class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= form.label :capacity, class: 'bmd-label-floating' %>
+              
+                <div class="arrowSelect">
+                  <select name="soda[capacity]" id="soda_cacapacity" class="form-control">
+                    <option class="dataBaseValue"><%= @soda.capacity %></option>
+                    <option disabled>----------</option>
+                    <option value=250>250ml</option>
+                    <option value=600>600ml</option>
+                    <option value=1000>1L</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">                
+                <%= form.label :price, class: "bmd-label-floating" %>
+                <%= form.text_field :price, value: (number_with_precision(@soda.price, precision: 2)), required: true, class: 'form-control money'  %>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">                
+                <%= form.label :quantiti, class: "bmd-label-floating" %>
+                <%= form.number_field :quantiti, value: @soda.quantiti, required: true, class: 'form-control' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= form.submit class: "btn btn-primary pull-right"%>
+            <%= link_to t(:back), sodas_path, class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

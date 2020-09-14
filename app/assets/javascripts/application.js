@@ -42,6 +42,36 @@ $(document).ready(function(){
   });
 });
 
+if (document.querySelector('.dataBaseValue') !== null){
+  var capacity = document.querySelector('.dataBaseValue');
+
+  if (capacity.value == 250){
+    capacity.innerHTML = "250ml";
+  } else if (capacity.value == 600) {
+    capacity.innerHTML = "600ml"
+  } else {
+    capacity.innerHTML = "1L";
+  }
+
+  $("form").submit(function(e){
+    var valores = []; // array para guardar os valores
+    for(var valor of $(this).serializeArray()){
+      valores.push(valor.value);
+    }
+
+    if (valores[6] === "250ml"){
+      valores[6] = 250;
+      capacity.innerHTML = valores[6];
+    } if (valores[6] === "600ml") {
+      valores[6] = 600;
+      capacity.innerHTML = valores[6];
+    } if (valores[6] === "1L"){
+      valores[6] = 1000;
+      capacity.innerHTML = valores[6];
+    }
+  });
+}
+
 //= require material-dashboard.js
 //= require demo.js
 
@@ -218,10 +248,7 @@ $(document).ready(function() {
   });
 });
 
-
-
 function modify_up(typed_text) {
   modified_text = typed_text.value.toUpperCase();
   typed_text.value = modified_text;
 }
-

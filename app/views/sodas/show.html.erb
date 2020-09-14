@@ -1,34 +1,70 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class='margin_elements_above_table_show'>
+      <%= link_to t(:new_client), new_soda_path, class: 'btn btn-primary pull-right' %>  
+    </div>
+    <div class="card">
+        <div class="card-header card-header-primary">
+        <h4 class="card-title">Cliente <!--<%= t(:client) %>--></h4>
+        <p class="card-category">Veja os dados desse cliente abaixo <!--<%= t :form_client_subtitle %>--></p>
+    </div>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @soda.brand %>
-</p>
+    <div class="card-body justify-content-center">
 
-<p>
-  <strong>Category:</strong>
-  <%= @soda.category %>
-</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group"> 
+            <label class="bmd-label-floating"> brand</label>
+            <input type='text' value='<%=  @soda.brand %>' class="form-control"  disabled>
+          </div>
+        </div>                                        
 
-<p>
-  <strong>Flavor:</strong>
-  <%= @soda.flavor %>
-</p>
+        <div class="col-md-6">
+          <div class="form-group"> 
+            <label class="bmd-label-floating">Category</label>
+            <input type='text' value='<%=  @soda.category %>' class="form-control"  disabled>
+          </div>
+        </div>                                        
+      </div>
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @soda.capacity %>
-</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">flavor</label>
+            <input type='text' value='<%=  @soda.flavor %>' class="form-control"  disabled>
+          </div>
+        </div>                                        
 
-<p>
-  <strong>Price:</strong>
-  <%= @soda.price %>
-</p>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Capacity</label>
+            <input type='text' value='<%= format_capacity(@soda.capacity) %>' class="form-control"  disabled>
+          </div>
+        </div>                                        
+      </div>
 
-<p>
-  <strong>Quantiti:</strong>
-  <%= @soda.quantiti %>
-</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Price R$</label>
+            <input type='text' value='R$ <%=  number_with_precision @soda.price, precision: 2 %>' class="form-control"  disabled>
+          </div>
+        </div>   
 
-<%= link_to 'Edit', edit_soda_path(@soda) %> |
-<%= link_to 'Back', sodas_path %>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Quantiti</label>
+            <input type='text' value='<%=  @soda.quantiti %>' class="form-control"  disabled>
+          </div>
+        </div>                                        
+      </div>
+
+
+      <%= link_to t(:edit), edit_soda_path(@soda), class: 'btn btn-primary pull-right' %>
+      <%= link_to t(:back), sodas_path,  class: 'btn btn-primary' %>
+    </div>
+    </div>
+  </div>
+</div>
+
