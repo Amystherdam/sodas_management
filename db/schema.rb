@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_09_14_112038) do
 
-  create_table "sodas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "sodas", force: :cascade do |t|
     t.string "brand"
     t.string "category"
     t.string "flavor"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_09_14_112038) do
     t.index ["brand", "capacity", "flavor"], name: "index_sodas_on_brand_and_capacity_and_flavor", unique: true
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
