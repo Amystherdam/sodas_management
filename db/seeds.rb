@@ -35,7 +35,7 @@ end
 1.times do |i|
     puts "cadastrando usuários..."
 User.create!([
-    {email: 'refri@unilab.com.br', password: 'naUniLab'}
+    {email: 'adm@refrigerantes.com.br', password: 'refrigerantes'}
 ])
     puts "cadastrados!"
 end
