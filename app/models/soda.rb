@@ -9,7 +9,7 @@ class Soda < ApplicationRecord
 
   def self.search(query)
     where(
-      "brand LIKE ? OR capacity LIKE ? OR price LIKE ? OR quantiti LIKE ?",
+      "brand LIKE ? OR cast(capacity as text) LIKE ? OR cast(price as text) LIKE ? OR cast(quantiti as text) LIKE ?",
       "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%"
     )
   end
