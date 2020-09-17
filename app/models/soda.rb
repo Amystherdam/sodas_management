@@ -8,10 +8,26 @@ class Soda < ApplicationRecord
   validates :brand, uniqueness: {message: " - There is already the same capacity and flavor linked to this brand in the system!", if: [:capacity?, :flavor?], scope: [:capacity, :flavor]}
 
   def self.search(query)
-    where(
-      "brand LIKE ? OR cast(capacity as text) LIKE ? OR cast(price as text) LIKE ? OR cast(quantiti as text) LIKE ?",
-      "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%"
-    )
+    case query
+      
+    when "1L", "1l"
+      where(
+        "CAST(capacity AS TEXT) = ?", "1000"
+      )
+    when "600ml", "600ML"
+      where(
+        "CAST(capacity AS TEXT) = ?", "600"
+      )
+    when "250ml", "250ML"
+      where(
+        "CAST(capacity AS TEXT) = ?", "250"
+      )
+    else
+      where(
+        "brand LIKE ? OR CAST(capacity AS TEXT) LIKE ? OR CAST(price AS TEXT) LIKE ? OR CAST(quantiti AS TEXT) LIKE ?",
+        "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%"
+      )
+    end
   end
 
   private
